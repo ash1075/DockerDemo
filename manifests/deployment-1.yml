@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "myaksclister-d105"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "myaksclister-d105"
+  template:
+    metadata:
+      labels:
+        app: "myaksclister-d105"
+    spec:
+      containers:
+        - name: "myaksclister-d105"
+          image: "myconreg75.azurecr.io/myaksclister"
+          ports:
+          - containerPort: 3423
