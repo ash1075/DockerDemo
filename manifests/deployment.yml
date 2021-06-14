@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "myaksclister-737d"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "myaksclister-737d"
+  template:
+    metadata:
+      labels:
+        app: "myaksclister-737d"
+    spec:
+      containers:
+        - name: "myaksclister-737d"
+          image: "myconreg75.azurecr.io/myaksclister"
+          ports:
+          - containerPort: 234
