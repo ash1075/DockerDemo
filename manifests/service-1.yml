@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: "myaksclister-d105"
+    labels:
+        app: "myaksclister-d105"
+spec:
+    type: LoadBalancer
+    ports:
+    - port: 3423
+      targetPort: 3423
+      protocol: TCP
+      name: http
+    selector:
+        app: "myaksclister-d105"
